@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
 
-// assuming password is not allowed with spaces.
+// assuming password is not empty and not allowed with spaces.
 // special chars, numbers, alphabets
 const PASSWORD_REGEX = /^[a-zA-Z0-9!@#$%^&*()_+{}\[\]:;<>,.\\~-]+$/;
 
@@ -49,7 +48,6 @@ function SignIn() {
           className="password overlap-group-2"
           placeholder="PASSWORD"
           type="password"
-          // pattern: "^[a-zA-Z0-9!@#$%^&*()_+{}[]:;<>,.?~\\-]*$",
         />
         <span className="password-error">{state.error.password}</span>
 
@@ -59,7 +57,7 @@ function SignIn() {
           </div>
         </button>
         <div className="text-wrapper-2">Forgot password?</div>
-        <img className="group" alt="Group" src="/cart.svg" />
+        <img className="cart" alt="Cart" src="/cart.svg" />
       </form>
     </div>
   );
